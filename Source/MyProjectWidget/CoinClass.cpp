@@ -46,25 +46,10 @@ void CoinClass::Construct(const FArguments& InArgs)
                 .HAlign(HAlign_Left)
                 .VAlign(VAlign_Top)
                 [
-					SNew(SHorizontalBox)
-						+ SHorizontalBox::Slot()
-						.AutoWidth()
-                        [
-							SNew(SImage)
-								.Image(Texture)
-                        ]
-						+ SHorizontalBox::Slot()
-                   // +SAssignNew(CoinCountText, STextBlock)
-						.AutoWidth()
-						[
-							SNew(STextBlock)
-								.Text(FText::FromString("Coins: 0"))
-								.ColorAndOpacity(FLinearColor::White)
-								.Font(FontInfo)
-                        ]
-                        //.Text(FText::FromString("Coins: 0"))
-                        //.ColorAndOpacity(FLinearColor::White)
-						//.Font(FontInfo)
+                    SAssignNew(CoinCountText, STextBlock)
+                        .Text(FText::FromString("Coins: 0"))
+                        .ColorAndOpacity(FLinearColor::White)
+                        .Font(FontInfo)
                 ]
         ];
 
